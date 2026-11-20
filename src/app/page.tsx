@@ -1,5 +1,6 @@
 "use client";
 import { ContactModal } from "@/components/contact-modal/contact-modal";
+import { AgencyManifesto } from "@/components/home/agency-manifesto";
 import { ClientLogos } from "@/components/home/client-logos";
 import { HeroSection } from "@/components/home/hero-section";
 import { ProjectShowcase } from "@/components/home/project-showcase";
@@ -24,6 +25,15 @@ export default function Home() {
     setIsContactOpen(true);
   };
 
+  const handleArtifactClick = (projectId: string) => {
+    const match = PROJECTS.find((p) => p.id === projectId);
+    if (match) {
+      setSelectedProject(match);
+    } else {
+      setIsPortfolioOpen(true);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-[#F7F6F2] text-[#111111] overflow-x-hidden">
       <main>
@@ -37,6 +47,12 @@ export default function Home() {
         <ProjectShowcase
           projects={PROJECTS}
           onSelectProject={(project) => setSelectedProject(project)}
+        />
+
+        <AgencyManifesto
+          onContactClick={() => handleOpenContact("Logo & Branding")}
+          onPortfolioClick={() => setIsPortfolioOpen(true)}
+          onArtifactClick={handleArtifactClick}
         />
       </main>
 
