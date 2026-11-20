@@ -4,10 +4,11 @@ import { AgencyManifesto } from "@/components/home/agency-manifesto";
 import { ClientLogos } from "@/components/home/client-logos";
 import { HeroSection } from "@/components/home/hero-section";
 import { ProjectShowcase } from "@/components/home/project-showcase";
+import { ServicesAccordion } from "@/components/home/services-accordion";
 import { PortfolioModal } from "@/components/portfolio-modal/portfolio-modal";
 import { ProjectDetailModal } from "@/components/project-detail-modal/project-detail-modal";
 import { ShowreelModal } from "@/components/showreel-modal/showreel-modal";
-import { ProjectItem, PROJECTS } from "@/data/agency-data";
+import { ProjectItem, PROJECTS, ServiceItem } from "@/data/agency-data";
 import { useState } from "react";
 
 export default function Home() {
@@ -34,6 +35,11 @@ export default function Home() {
     }
   };
 
+  const handleServiceSelect = (service: ServiceItem) => {
+    setActiveInquiryService(service.title);
+    setIsContactOpen(true);
+  };
+
   return (
     <div className="min-h-screen bg-[#F7F6F2] text-[#111111] overflow-x-hidden">
       <main>
@@ -54,6 +60,8 @@ export default function Home() {
           onPortfolioClick={() => setIsPortfolioOpen(true)}
           onArtifactClick={handleArtifactClick}
         />
+
+        <ServicesAccordion onServiceSelect={handleServiceSelect} />
       </main>
 
       <ContactModal
