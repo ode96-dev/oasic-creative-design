@@ -235,7 +235,6 @@ export function ProjectShowcase({
                   )}
                 </div>
 
-                {/* Card Bottom Meta & Primary Action Circle */}
                 <div className="flex items-center justify-between pt-5 px-1 gap-4">
                   <div className="min-w-0">
                     <h3 className="text-xl sm:text-2xl font-extrabold text-[#111111] uppercase tracking-tight truncate">

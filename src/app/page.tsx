@@ -2,6 +2,7 @@
 import { ContactModal } from "@/components/contact-modal/contact-modal";
 import { AgencyManifesto } from "@/components/home/agency-manifesto";
 import { ClientLogos } from "@/components/home/client-logos";
+import { ClientTestimonial } from "@/components/home/client-testimonial";
 import { HeroSection } from "@/components/home/hero-section";
 import { ProjectShowcase } from "@/components/home/project-showcase";
 import { ServicesAccordion } from "@/components/home/services-accordion";
@@ -62,6 +63,8 @@ export default function Home() {
         />
 
         <ServicesAccordion onServiceSelect={handleServiceSelect} />
+
+        <ClientTestimonial />
       </main>
 
       <ContactModal
