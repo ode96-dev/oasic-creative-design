@@ -1,5 +1,6 @@
 "use client";
 import { ContactModal } from "@/components/contact-modal/contact-modal";
+import { ClientLogos } from "@/components/home/client-logos";
 import { HeroSection } from "@/components/home/hero-section";
 import { ShowreelModal } from "@/components/showreel-modal/showreel-modal";
 import { useState } from "react";
@@ -22,6 +23,8 @@ export default function Home() {
           onContactClick={() => handleOpenContact("Web Design")}
           onPlayClick={() => setIsShowreelOpen(true)}
         />
+
+        <ClientLogos />
       </main>
 
       <ContactModal
